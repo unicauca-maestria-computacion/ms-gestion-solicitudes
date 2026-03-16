@@ -1,0 +1,47 @@
+package com.maestria.gestionSolicitudes.domain;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Table(name = "avales_pasantia_investigacion")
+@Data 
+public class AvalPasantiaInvestigacion {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_solicitud")
+    private Solicitudes solicitud;
+
+    @Column(name = "lugar_pasantia")
+    private String lugarPasantia;
+
+    @Column(name = "fecha_inicio")
+    private LocalDate fechaInicio;  
+
+    @Column(name = "fecha_fin")
+    private LocalDate fechaFin;  
+
+    @Column(name = "universidad_residencia")
+    private String universidadResidencia;
+
+    @Column(name = "grupo_universidad_residencia")
+    private String grupoUniversidadResidencia;
+
+    @Column(name = "nombre_docente_externo")
+    private String nombreDocenteExterno;
+}
