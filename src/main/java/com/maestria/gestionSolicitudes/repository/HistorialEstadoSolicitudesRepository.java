@@ -9,6 +9,11 @@ import com.maestria.gestionSolicitudes.domain.HistorialEstadoSolicitudes;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
 @Repository
-public interface HistorialEstadoSolicitudesRepository extends JpaRepository<HistorialEstadoSolicitudes, Integer> {
+public interface HistorialEstadoSolicitudesRepository extends JpaRepository<HistorialEstadoSolicitudes, Long> {
     List<HistorialEstadoSolicitudes> findBySolicitudOrderByFechaCreacionAsc(Solicitudes solicitud);
 }
+
+
+
+
+

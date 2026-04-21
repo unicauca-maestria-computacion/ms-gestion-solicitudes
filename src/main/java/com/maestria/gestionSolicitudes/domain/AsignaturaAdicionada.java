@@ -22,14 +22,14 @@ public class AsignaturaAdicionada {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_adicionar_asignatura")
     private AdicionarAsignatura adicionarAsignatura;
 
     @Column(name = "id_asignatura")
-    private Integer idAsignatura;
+    private Long idAsignatura;
 
     @Column(name = "noombre_asignatura")
     private String nombreAsignatura;
@@ -38,7 +38,7 @@ public class AsignaturaAdicionada {
     private String grupo;
 
     @Column(name = "id_docente")
-    private Integer idDocente;
+    private Long idDocente;
 
     @Column(name = "estado")
     private String estado;
@@ -51,3 +51,8 @@ public class AsignaturaAdicionada {
     @Convert(converter = BooleanConverter.class)
     private Boolean aprobadoConcejo;
 }
+
+
+
+
+

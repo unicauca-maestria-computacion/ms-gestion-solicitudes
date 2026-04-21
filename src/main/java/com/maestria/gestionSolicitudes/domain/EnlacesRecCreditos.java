@@ -19,7 +19,7 @@ public class EnlacesRecCreditos {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_rec_creditos")
@@ -28,3 +28,8 @@ public class EnlacesRecCreditos {
     @Column(name = "documento")
     private String documento;
 }
+
+
+
+
+

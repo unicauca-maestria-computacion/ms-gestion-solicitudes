@@ -12,3 +12,8 @@ public interface AdicionAsignaturaService {
     Boolean registrarAdicionAsignaturas(Solicitudes solicitud, List<InfoAdicionAsignaturaRequest> listaAsignaturas) throws Exception;
     Boolean registrarCancelarAsignaturas(Solicitudes solicitud, CancelarAsignaturaRequest datosCancelarAsignatura) throws Exception;
 }
+
+
+
+
+

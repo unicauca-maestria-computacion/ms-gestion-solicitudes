@@ -100,7 +100,7 @@ public class GestionSolicitudesCertificadoVotacionImpl implements GestionSolicit
                 }
 
                 EstadoSolicitudRequest estadoSolicitudes = new EstadoSolicitudRequest();
-                estadoSolicitudes.setCodigo(solicitud.getIdTipoSolicitud());            
+                estadoSolicitudes.setCodigo(solicitud.getIdTipoSolicitud() != null ? solicitud.getIdTipoSolicitud().intValue() : null);            
                 estadoSolicitudes.setEstado(solicitud.getEstado_solicitud());
                 solicitud.setFechaModificacion(LocalDateTime.now());
   
@@ -201,3 +201,7 @@ public class GestionSolicitudesCertificadoVotacionImpl implements GestionSolicit
     }
 
 }
+
+
+
+

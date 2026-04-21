@@ -30,3 +30,8 @@ public enum ESTADO_DESCRIPCION {
         return null; // O lanza una excepción si prefieres
     }
 }
+
+
+
+
+

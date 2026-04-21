@@ -6,3 +6,8 @@ public interface GestionEnvioCorreoService {
     
     Boolean enviarCorreo(EnvioCorreoRequest envioCorreoRequest);
 }
+
+
+
+
+

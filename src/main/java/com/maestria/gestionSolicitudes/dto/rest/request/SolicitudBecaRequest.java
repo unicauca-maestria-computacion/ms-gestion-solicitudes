@@ -8,3 +8,8 @@ public class SolicitudBecaRequest {
     private String motivo;
     private String formatoSolicitudBeca;
 }
+
+
+
+
+

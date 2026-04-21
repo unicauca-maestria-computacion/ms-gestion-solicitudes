@@ -14,3 +14,7 @@ public interface GestionSolicitudesCertificadoVotacionService {
     List<SolicitudPorFechaRequest> habilitarSolicitudPorFecha(SolicitudPorFechaRequest datosFechaSolicitud);
 
 }
+
+
+
+

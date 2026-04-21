@@ -9,7 +9,7 @@ import com.maestria.gestionSolicitudes.domain.DocumentosCertificadoVotacion;
 import org.springframework.data.repository.query.Param;
 
 @Repository
-public interface DocumentoCertificadoVotacionRepository extends JpaRepository<DocumentosCertificadoVotacion, Integer> {
+public interface DocumentoCertificadoVotacionRepository extends JpaRepository<DocumentosCertificadoVotacion, Long> {
 
     @Query(value = """
         SELECT s.id, s.documento_firmado
@@ -24,4 +24,9 @@ public interface DocumentoCertificadoVotacionRepository extends JpaRepository<Do
         @Param("estadoEstudiante") String estadoEstudiante);
 
 }
+
+
+
+
+
 

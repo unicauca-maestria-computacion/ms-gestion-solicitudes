@@ -11,3 +11,8 @@ public class DatosSolicitudHomologacion {
     private List<DatosAsignaturaHomologar> datosAsignatura;
     private List<String> documentosAdjuntos;    
 }
+
+
+
+
+

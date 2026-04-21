@@ -9,3 +9,8 @@ import com.maestria.gestionSolicitudes.dto.rest.request.AvalPasantiaInvRequest;
 public interface AvalPasantiaInvMapper extends GenericMapper<AvalPasantiaInvRequest, AvalPasantiaInvestigacion> {
 
 }
+
+
+
+
+

@@ -9,3 +9,8 @@ public class DatosCursarAsignaturaDto {
     private String motivo;    
     private List<AsignaturaExternaRequest> listaAsignaturasCursar;
 }
+
+
+
+
+

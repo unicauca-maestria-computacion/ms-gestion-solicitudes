@@ -4,8 +4,13 @@ import lombok.Data;
 
 @Data
 public class DocentesAsignaturasResponse {
-    private Integer id;
+    private Long id;
     private String nombreAsignatura;
     private String codigoAsignatura;
-    private Integer idDocente;
+    private Long idDocente;
 }
+
+
+
+
+

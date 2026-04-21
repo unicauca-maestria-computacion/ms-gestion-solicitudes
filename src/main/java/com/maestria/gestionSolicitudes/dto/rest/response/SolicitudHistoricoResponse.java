@@ -11,3 +11,8 @@ public class SolicitudHistoricoResponse {
     private String descripcion;
     private String comentarios;
 }
+
+
+
+
+

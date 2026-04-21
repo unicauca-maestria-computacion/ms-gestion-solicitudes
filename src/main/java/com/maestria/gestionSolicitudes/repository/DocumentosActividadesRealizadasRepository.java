@@ -9,10 +9,15 @@ import com.maestria.gestionSolicitudes.domain.DocumentosActividadesRealizadas;
 import com.maestria.gestionSolicitudes.domain.SubTiposSolicitud;
 
 public interface DocumentosActividadesRealizadasRepository 
-        extends JpaRepository<DocumentosActividadesRealizadas, Integer> {
+        extends JpaRepository<DocumentosActividadesRealizadas, Long> {
     
     // Método para encontrar registros por actividadRealizada y subTiposSolicitud
     List<DocumentosActividadesRealizadas> findByActividadRealizadaAndSubTiposSolicitud(
             ActividadesRealizadasPracticaDocente actividadRealizada, 
             SubTiposSolicitud subTiposSolicitud);
 }
+
+
+
+
+

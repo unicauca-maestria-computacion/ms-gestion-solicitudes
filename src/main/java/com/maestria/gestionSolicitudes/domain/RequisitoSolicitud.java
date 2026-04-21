@@ -24,7 +24,7 @@ public class RequisitoSolicitud extends EntidadPrincipal{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "titulo_documento")
     private String tituloDocumento;
@@ -43,3 +43,8 @@ public class RequisitoSolicitud extends EntidadPrincipal{
     private TiposSolicitud tipoSolicitud;
 
 }
+
+
+
+
+

@@ -8,3 +8,8 @@ import lombok.Data;
 public class AvalSeminarioActRequest {
     private List<String> documentosAdjuntos;
 }
+
+
+
+
+

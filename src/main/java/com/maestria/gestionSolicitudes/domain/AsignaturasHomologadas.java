@@ -28,7 +28,7 @@ public class AsignaturasHomologadas extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_homologacion")
@@ -54,3 +54,8 @@ public class AsignaturasHomologadas extends EntidadPrincipal {
     @Convert(converter = BooleanConverter.class)
     private Boolean aprobadoConcejo;
 }
+
+
+
+
+

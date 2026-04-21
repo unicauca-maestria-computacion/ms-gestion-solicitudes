@@ -4,9 +4,14 @@ import lombok.Data;
 
 @Data
 public class TipoSolicitudDto {
-    private Integer idSolicitud;
+    private Long idSolicitud;
     private String codigoSolicitud;
     private String nombreSolicitud;
     private String fechaInicio;
     private String fechaFinal;
 }
+
+
+
+
+

@@ -65,7 +65,7 @@ public class GestionSubTiposSolicitudServiceImpl implements GestionSubTiposSolic
     }
     
 
-    private List<String> obtenerDocumentosSubtipos(Integer idSubtipo) {
+    private List<String> obtenerDocumentosSubtipos(Long idSubtipo) {
         List<String> documentos = documentoSubtipoRepository.findBySubtipoSolicitud(idSubtipo)
             .stream()
             .map(DocumentosSubtipos::getDocumento)
@@ -73,7 +73,7 @@ public class GestionSubTiposSolicitudServiceImpl implements GestionSubTiposSolic
         return documentos;
     }
 
-    private List<String> obtenerEnlacesSubtipos(Integer idSubtipo) {
+    private List<String> obtenerEnlacesSubtipos(Long idSubtipo) {
         List<String> enlaces = enlaceSubtipoRepository.findBySubtipoSolicitud(idSubtipo)
             .stream()
             .map(EnlacesSubtipos::getNombreRequisito)
@@ -81,3 +81,8 @@ public class GestionSubTiposSolicitudServiceImpl implements GestionSubTiposSolic
         return enlaces;
     }
 }
+
+
+
+
+

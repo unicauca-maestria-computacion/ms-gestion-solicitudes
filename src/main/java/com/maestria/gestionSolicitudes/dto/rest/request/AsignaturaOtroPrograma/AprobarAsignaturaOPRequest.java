@@ -6,11 +6,11 @@ import lombok.Data;
 @Data
 public class AprobarAsignaturaOPRequest {
 
-    private Integer idCursarAsignatura;
+    private Long idCursarAsignatura;
     private String nombreAsignatura;
     private String codigo;
     private Integer creditos;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private String grupo;
     private String nombreInstitucion;
     private String nombrePrograma;
@@ -18,3 +18,7 @@ public class AprobarAsignaturaOPRequest {
     private String nombreDocente;
     private Boolean aprobado;
 }
+
+
+
+

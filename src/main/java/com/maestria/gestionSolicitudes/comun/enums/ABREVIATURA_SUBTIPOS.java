@@ -44,3 +44,8 @@ public enum ABREVIATURA_SUBTIPOS {
         return null; // O lanza una excepción si prefieres
     }
 }
+
+
+
+
+

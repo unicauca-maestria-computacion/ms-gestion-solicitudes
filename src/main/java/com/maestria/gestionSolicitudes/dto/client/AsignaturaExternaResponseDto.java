@@ -4,12 +4,17 @@ import lombok.Data;
 
 @Data
 public class AsignaturaExternaResponseDto {
-    private Integer idAsignatura;
+    private Long idAsignatura;
     private String nombre;
     private Integer creditos;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private Double calificacion;
     private String programa;
     private String institucion;
     private String contenidoProgramatico;
 }
+
+
+
+
+

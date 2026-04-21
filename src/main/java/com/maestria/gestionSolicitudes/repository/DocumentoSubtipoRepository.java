@@ -7,9 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.DocumentosSubtipos;
 
-public interface DocumentoSubtipoRepository extends JpaRepository<DocumentosSubtipos, Integer> {
+public interface DocumentoSubtipoRepository extends JpaRepository<DocumentosSubtipos, Long> {
     
     @Query("SELECT ds FROM DocumentosSubtipos ds " +
         "WHERE ds.subTiposSolicitud.id = ?1")
-    List<DocumentosSubtipos> findBySubtipoSolicitud(Integer id);
+    List<DocumentosSubtipos> findBySubtipoSolicitud(Long id);
 }
+
+
+
+
+

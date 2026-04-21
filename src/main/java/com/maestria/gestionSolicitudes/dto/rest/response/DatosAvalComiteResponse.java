@@ -10,3 +10,8 @@ public class DatosAvalComiteResponse {
     private BigDecimal horasReconocer;
     private String documentoAdjunto;
 }
+
+
+
+
+

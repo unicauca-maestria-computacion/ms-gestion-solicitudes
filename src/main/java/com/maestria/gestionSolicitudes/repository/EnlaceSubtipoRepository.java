@@ -7,9 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.EnlacesSubtipos;
 
-public interface EnlaceSubtipoRepository extends JpaRepository<EnlacesSubtipos, Integer> {
+public interface EnlaceSubtipoRepository extends JpaRepository<EnlacesSubtipos, Long> {
     
     @Query("SELECT es FROM EnlacesSubtipos es " +
         "WHERE es.subTiposSolicitud.id = ?1")
-    List<EnlacesSubtipos> findBySubtipoSolicitud(Integer id);
+    List<EnlacesSubtipos> findBySubtipoSolicitud(Long id);
 }
+
+
+
+
+

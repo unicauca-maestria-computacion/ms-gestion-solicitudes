@@ -7,8 +7,13 @@ public class DatosAsignaturaOtroPrograma {
     private String nombre;
     private String codigo;
     private Integer creditos;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private String grupo;
     private String nombrePrograma;
     private String nombreDocente;
 }
+
+
+
+
+

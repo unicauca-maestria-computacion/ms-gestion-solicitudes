@@ -12,3 +12,8 @@ public class DatosActividadDocenteResponse {
     private List<String> documentos;
     private List<String> enlaces;
 }
+
+
+
+
+

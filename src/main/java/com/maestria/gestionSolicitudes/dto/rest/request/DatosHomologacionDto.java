@@ -10,3 +10,8 @@ public class DatosHomologacionDto {
     private String institucionProcedencia;
     private List<DatosAsignaturaHomologacionDto> listaAsignaturas;
 }
+
+
+
+
+

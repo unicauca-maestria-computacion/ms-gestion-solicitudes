@@ -16,11 +16,16 @@ public class Coordinador {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     
     @Column(name = "id_persona")
-    private Integer idPersona;
+    private Long idPersona;
 
     @Column(name = "id_usuario")
-    private Integer idUsuario;
+    private Long idUsuario;
 }
+
+
+
+
+

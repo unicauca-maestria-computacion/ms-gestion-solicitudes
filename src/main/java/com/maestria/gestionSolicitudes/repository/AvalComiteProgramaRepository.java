@@ -8,7 +8,12 @@ import com.maestria.gestionSolicitudes.domain.AvalComitePrograma;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
 public interface AvalComiteProgramaRepository 
-        extends JpaRepository<AvalComitePrograma, Integer>{
+        extends JpaRepository<AvalComitePrograma, Long>{
     
     List<AvalComitePrograma> findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

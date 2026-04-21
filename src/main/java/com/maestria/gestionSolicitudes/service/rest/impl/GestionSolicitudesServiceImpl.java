@@ -366,7 +366,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
     }
 
     @Transactional
-    private boolean registrarDatosTipoSolicitud(SolicitudRequestDto datosSolicitud, Integer idSolicitud, String tipoSolicitud) throws Exception{
+    private boolean registrarDatosTipoSolicitud(SolicitudRequestDto datosSolicitud, Long idSolicitud, String tipoSolicitud) throws Exception{
         boolean registro = false;
         switch (tipoSolicitud) {
             case "AD_ASIG":
@@ -618,7 +618,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
     }
 
     @Override
-    public DatosGestionSolicitudResponse obtenerDatosSolicitud(Integer idSolicitud) throws Exception {
+    public DatosGestionSolicitudResponse obtenerDatosSolicitud(Long idSolicitud) throws Exception {
         DatosGestionSolicitudResponse response = new DatosGestionSolicitudResponse();
         try {
             Optional<Solicitudes> solicitudOpt = solicitudesRepository.findById(idSolicitud);
@@ -725,7 +725,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
                                 for (AsignaturasHomologadas asignatura : asignaturasHomologadas) {
                                     DatosAsignaturaHomologar datosAsignatura = new DatosAsignaturaHomologar();
                                     AsignaturaExternaResponseDto asignaturaExternaDto = gestionAsignaturasService
-                                        .obtenerAsignaturaExterna(asignatura.getAsignaturaExterna());
+                                        .obtenerAsignaturaExterna(asignatura.getAsignaturaExterna() != null ? asignatura.getAsignaturaExterna().longValue() : null);
                                     datosAsignatura.setCalificacion(asignatura.getCalificacionObtenida());
                                     datosAsignatura.setCreditos(asignaturaExternaDto.getCreditos());
                                     datosAsignatura.setIntensidadHoraria(asignaturaExternaDto.getIntensidadHoraria());
@@ -1001,6 +1001,8 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
             firmaSolicitud.setNumPaginaDirector(datosSolicitud.getNumPaginaDirector());
             firmaSolicitud.setPosXDirector(datosSolicitud.getPosXDirector());
             firmaSolicitud.setPosYDirector(datosSolicitud.getPosYDirector());
+            firmaSolicitud.setFirmaTutor(false);
+            firmaSolicitud.setFirmaDirector(false);
             firmaSolicitudRepository.save(firmaSolicitud);
             return  Boolean.TRUE;
         } catch (Exception e) {
@@ -1041,8 +1043,10 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
                 registroFirma = Boolean.TRUE;
             }
         }
-        if ((firmas.getFirmaTutor() && firmas.getFirmaDirector()) || 
-            (firmas.getFirmaTutor() && !solicitud.getRequiereFirmaDirector())) {
+        boolean isFirmaTutor = Boolean.TRUE.equals(firmas.getFirmaTutor());
+        boolean isFirmaDirector = Boolean.TRUE.equals(firmas.getFirmaDirector());
+        if ((isFirmaTutor && isFirmaDirector) || 
+            (isFirmaTutor && !Boolean.TRUE.equals(solicitud.getRequiereFirmaDirector()))) {
             registrarHistoricoSolicitud(solicitud);
             solicitud.setEstado(ESTADO_SOLICITUD.AVALADA.getDescripcion());
             solicitud.setFechaModificacion(LocalDateTime.now());
@@ -1071,17 +1075,17 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registroFirma;
     }
 
-    private boolean registrarAdicionAsignatura(Integer idSolicitud, List<InfoAdicionAsignaturaRequest> listaAsignaturas) throws Exception {
+    private boolean registrarAdicionAsignatura(Long idSolicitud, List<InfoAdicionAsignaturaRequest> listaAsignaturas) throws Exception {
         Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
         return adicionAsignaturaService.registrarAdicionAsignaturas(solicitud, listaAsignaturas);
     }
 
-    private boolean registrarCancelarAsignatura(Integer idSolicitud, CancelarAsignaturaRequest datosCancelarAsignatura) throws Exception {
+    private boolean registrarCancelarAsignatura(Long idSolicitud, CancelarAsignaturaRequest datosCancelarAsignatura) throws Exception {
         Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
         return adicionAsignaturaService.registrarCancelarAsignaturas(solicitud, datosCancelarAsignatura);
     }
 
-    private boolean registrarAplazarSemestre(Integer idSolicitud, AplazarSemestreRequest datosAplazarSemestre) {
+    private boolean registrarAplazarSemestre(Long idSolicitud, AplazarSemestreRequest datosAplazarSemestre) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1099,7 +1103,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarCursarAsignatura(Integer idSolicitud, DatosSolicitudCursarAsignaturaDto datosCursarAsignaturaDto) {
+    private boolean registrarCursarAsignatura(Long idSolicitud, DatosSolicitudCursarAsignaturaDto datosCursarAsignaturaDto) {
         CursarAsignatura cursarAsignatura = new CursarAsignatura();
         try {
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1158,7 +1162,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         }
     }
 
-    private boolean registrarAvalPasantiaInvestigacion(Integer idSolicitud, AvalPasantiaInvRequest avalPasantiaInvRequest) {
+    private boolean registrarAvalPasantiaInvestigacion(Long idSolicitud, AvalPasantiaInvRequest avalPasantiaInvRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1181,7 +1185,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarApoyoEconimico(Integer idSolicitud, ApoyoEconomicoRequest apoyoEconomicoRequest) {
+    private boolean registrarApoyoEconimico(Long idSolicitud, ApoyoEconomicoRequest apoyoEconomicoRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1204,7 +1208,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarReconocimientoCreditos(Integer idSolicitud, ReconocimientoCreditosRequest recCreditosPasantiaRequest) {
+    private boolean registrarReconocimientoCreditos(Long idSolicitud, ReconocimientoCreditosRequest recCreditosPasantiaRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1236,7 +1240,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarAvalSeminario(Integer idSolicitud, AvalSeminarioActRequest avalSeminarioActRequest) {
+    private boolean registrarAvalSeminario(Long idSolicitud, AvalSeminarioActRequest avalSeminarioActRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1259,7 +1263,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarApoyoEconimicoCongreso(Integer idSolicitud, ApoyoEconomicoCongresoRequest apoyoEconomicoCongresoRequest) {
+    private boolean registrarApoyoEconimicoCongreso(Long idSolicitud, ApoyoEconomicoCongresoRequest apoyoEconomicoCongresoRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1282,7 +1286,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarApoyoEconimicoPublicacionEvento(Integer idSolicitud, ApoyoEconomicoPublicacionEventoRequest apoyoEconomicoPublicacionEventoRequest) {
+    private boolean registrarApoyoEconimicoPublicacionEvento(Long idSolicitud, ApoyoEconomicoPublicacionEventoRequest apoyoEconomicoPublicacionEventoRequest) {
         boolean registro = false;
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1309,7 +1313,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarActividadesPracticaDocente(Integer idSolicitud, List<DatosActividadDocenteRequest> infoActividadesDocente) {
+    private boolean registrarActividadesPracticaDocente(Long idSolicitud, List<DatosActividadDocenteRequest> infoActividadesDocente) {
         boolean registro = false;
         try{            
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();            
@@ -1354,7 +1358,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return registro;
     }
 
-    private boolean registrarAvalComitePrograma(Integer idSolicitud, List<AvalComiteRequest> datosAvalComite) {
+    private boolean registrarAvalComitePrograma(Long idSolicitud, List<AvalComiteRequest> datosAvalComite) {
         boolean registro = false;
         try{            
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();            
@@ -1452,7 +1456,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
         return solicitudes;
     }
 
-    private boolean registrarSolicitudBecaDescuento(Integer idSolicitud, SolicitudBecaRequest datosSolicitudBeca) {
+    private boolean registrarSolicitudBecaDescuento(Long idSolicitud, SolicitudBecaRequest datosSolicitudBeca) {
         boolean registro = false;
         try{            
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
@@ -1626,7 +1630,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
     }
 
     @Override
-    public Boolean actualizarSolicitud(Integer idSolicitud, String estado) {
+    public Boolean actualizarSolicitud(Long idSolicitud, String estado) {
         try{
             Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
             solicitud.setEstado(estado);
@@ -1652,7 +1656,7 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
     }
 
     @Override
-    public boolean verificarExistenciaSolicitud(Integer solicitudId, String correoElectronico) {
+    public boolean verificarExistenciaSolicitud(Long solicitudId, String correoElectronico) {
         Integer respuesta = solicitudesRepository.obtenerDirectorSolicitud(solicitudId, correoElectronico);
         return respuesta == 1 ? true : false;
     }
@@ -1672,3 +1676,8 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
 
     }
 }
+
+
+
+
+

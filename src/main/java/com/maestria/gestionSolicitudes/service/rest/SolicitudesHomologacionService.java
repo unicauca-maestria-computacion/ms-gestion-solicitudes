@@ -4,6 +4,11 @@ import com.maestria.gestionSolicitudes.dto.rest.request.DatosSolicitudHomologaci
 
 public interface SolicitudesHomologacionService {
     
-    boolean registrarSolicitudHomologacion(Integer idSolicitud, DatosSolicitudHomologacionDto dHomologacionDto);
+    boolean registrarSolicitudHomologacion(Long idSolicitud, DatosSolicitudHomologacionDto dHomologacionDto);
 
 }
+
+
+
+
+

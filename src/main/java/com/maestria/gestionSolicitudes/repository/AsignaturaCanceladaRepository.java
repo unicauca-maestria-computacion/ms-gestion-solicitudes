@@ -7,7 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.AsignaturaCancelada;
 import com.maestria.gestionSolicitudes.domain.CancelarAsignatura;
 
-public interface AsignaturaCanceladaRepository extends JpaRepository<AsignaturaCancelada, Integer> {
+public interface AsignaturaCanceladaRepository extends JpaRepository<AsignaturaCancelada, Long> {
     
     List<AsignaturaCancelada> findByCancelarAsignatura(CancelarAsignatura cancelarAsignatura);
 }
+
+
+
+
+

@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import com.maestria.gestionSolicitudes.domain.DocumentosAdjuntosHomologacion;
 import com.maestria.gestionSolicitudes.domain.Homologaciones;
 
-public interface DocumentosAdjuntosHomologacionRepository extends JpaRepository<DocumentosAdjuntosHomologacion, Integer> {
+public interface DocumentosAdjuntosHomologacionRepository extends JpaRepository<DocumentosAdjuntosHomologacion, Long> {
     
     @Query("""
             SELECT dah.documento FROM DocumentosAdjuntosHomologacion dah 
@@ -17,3 +17,8 @@ public interface DocumentosAdjuntosHomologacionRepository extends JpaRepository<
             """)
     List<String> findDocumentosByHomologacion(@Param("homologacion") Homologaciones homologacion);
 }
+
+
+
+
+

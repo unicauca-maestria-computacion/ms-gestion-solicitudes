@@ -24,7 +24,7 @@ public class TiposSolicitud extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "codigo")
     private String codigo;
@@ -42,3 +42,8 @@ public class TiposSolicitud extends EntidadPrincipal {
     private String fechaFinal;
     
 }
+
+
+
+
+

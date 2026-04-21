@@ -18,11 +18,16 @@ public interface GestionAsignaturasService {
     AsignaturaExternaResponseDto registrarAsignaturasExternas(AsignaturaExternaDto asignatura);
 
     @GetMapping("${gestion-asignaturas.resources.obtener-asignatura}")
-    AsignaturaExternaResponseDto obtenerAsignaturaExterna(@PathVariable Integer idAsignatura);
+    AsignaturaExternaResponseDto obtenerAsignaturaExterna(@PathVariable Long idAsignatura);
 
     @GetMapping("${gestion-asignaturas.resources.docentes-asignaturas}")
     List<DocentesAsignaturasResponse> listarDocentesAsignaturas();
 
     @GetMapping("${gestion-asignaturas.resources.asignaturas-adicionar}")
-    List<DocentesAsignaturasResponse> obtenerDocentesAsignaturas(@PathVariable List<Integer> lista);
+    List<DocentesAsignaturasResponse> obtenerDocentesAsignaturas(@PathVariable List<Long> lista);
 }
+
+
+
+
+

@@ -10,3 +10,8 @@ public class CancelarAsignaturaRequest {
     private String motivo;
     private String documentoAdjunto;
 }
+
+
+
+
+

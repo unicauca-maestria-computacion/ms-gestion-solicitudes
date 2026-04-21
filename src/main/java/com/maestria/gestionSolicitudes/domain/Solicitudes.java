@@ -28,20 +28,20 @@ public class Solicitudes extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "id_estudiante")
-    private Integer idEstudiante;
+    private Long idEstudiante;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_tipo_solicitud")
     private TiposSolicitud tipoSolicitud;
 
     @Column(name = "id_tutor")
-    private Integer idTutor;
+    private Long idTutor;
 
     @Column(name = "id_director")
-    private Integer idDirector;
+    private Long idDirector;
 
     @Column(name = "estado")
     private String estado;
@@ -60,6 +60,11 @@ public class Solicitudes extends EntidadPrincipal {
     private String comentario;
 
     @Column(name = "id_revisor")
-    private Integer idRevisor;
+    private Long idRevisor;
     
 }
+
+
+
+
+

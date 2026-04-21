@@ -6,7 +6,12 @@ import lombok.Data;
 public class DatosAsignaturaHomologacionDto {
     private String nombreAsignatura;
     private Integer numeroCreditos;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private Double calificacion;
     private String contenidoProgramatico;
 }
+
+
+
+
+

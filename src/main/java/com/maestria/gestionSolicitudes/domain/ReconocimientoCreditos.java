@@ -19,7 +19,7 @@ public class ReconocimientoCreditos {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -28,3 +28,8 @@ public class ReconocimientoCreditos {
     @Column(name = "tipo_reconocimiento")
     private String tipoReconocimiento;
 }
+
+
+
+
+

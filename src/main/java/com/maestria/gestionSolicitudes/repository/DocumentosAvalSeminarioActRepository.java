@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.DocumentosAvalSeminarioAct;
 import com.maestria.gestionSolicitudes.domain.AvalSeminarioActualizacion;
 
-public interface DocumentosAvalSeminarioActRepository extends JpaRepository<DocumentosAvalSeminarioAct, Integer> {
+public interface DocumentosAvalSeminarioActRepository extends JpaRepository<DocumentosAvalSeminarioAct, Long> {
     List<DocumentosAvalSeminarioAct> findAllByAvalSeminarioActualizacion(AvalSeminarioActualizacion recCreditosPasantia);
 }
+
+
+
+
+

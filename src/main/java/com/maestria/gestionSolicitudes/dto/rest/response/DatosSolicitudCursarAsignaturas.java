@@ -11,3 +11,7 @@ public class DatosSolicitudCursarAsignaturas {
     private List<String> documentosAdjuntos;
     
 }
+
+
+
+

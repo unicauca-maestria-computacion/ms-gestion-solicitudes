@@ -6,6 +6,11 @@ import com.maestria.gestionSolicitudes.domain.CancelarAsignatura;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
 
-public interface CancelarAsignaturaRepository extends JpaRepository<CancelarAsignatura, Integer> {
+public interface CancelarAsignaturaRepository extends JpaRepository<CancelarAsignatura, Long> {
     CancelarAsignatura findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

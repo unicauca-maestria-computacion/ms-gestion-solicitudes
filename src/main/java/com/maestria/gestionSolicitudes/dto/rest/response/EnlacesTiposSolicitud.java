@@ -8,3 +8,8 @@ public class EnlacesTiposSolicitud {
     private String nombre;
     private String urlAcortada;
 }
+
+
+
+
+

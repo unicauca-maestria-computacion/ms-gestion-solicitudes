@@ -25,7 +25,7 @@ public interface GestionSolicitudesService {
 
     List<SolicitudPendientesAval> obtenerSolicitudesPendientes(String correo) throws Exception;
 
-    DatosGestionSolicitudResponse obtenerDatosSolicitud(Integer idSolicitud) throws Exception;
+    DatosGestionSolicitudResponse obtenerDatosSolicitud(Long idSolicitud) throws Exception;
 
     Boolean registrarFirmasPendientes(DatosAvalarSolicitudDto dAvalarSolicitudDto) throws Exception;
 
@@ -37,9 +37,14 @@ public interface GestionSolicitudesService {
 
     void registrarHistoricoSolicitud(Solicitudes solicitud);
 
-    Boolean actualizarSolicitud(Integer idSolicitud, String estado);
+    Boolean actualizarSolicitud(Long idSolicitud, String estado);
 
-    boolean verificarExistenciaSolicitud(Integer solicitudId, String correoElectronico);
+    boolean verificarExistenciaSolicitud(Long solicitudId, String correoElectronico);
 
     FechaActualResponse obtenerFechaActual();
 }
+
+
+
+
+

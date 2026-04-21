@@ -9,3 +9,8 @@ public class FiltrosCertificadoVotacionRequest {
     private String estado_solicitud;
     private String estado_estudiante;
 }
+
+
+
+
+

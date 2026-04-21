@@ -5,6 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.CursarAsignatura;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface CursarAsignaturaRepository extends JpaRepository<CursarAsignatura, Integer> {
+public interface CursarAsignaturaRepository extends JpaRepository<CursarAsignatura, Long> {
     CursarAsignatura findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

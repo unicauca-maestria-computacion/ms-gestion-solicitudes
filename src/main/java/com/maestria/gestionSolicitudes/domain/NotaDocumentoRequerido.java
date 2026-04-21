@@ -24,7 +24,7 @@ public class NotaDocumentoRequerido extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "nota")
     private String nota;
@@ -33,3 +33,8 @@ public class NotaDocumentoRequerido extends EntidadPrincipal {
     @JoinColumn(name = "id_req_solicitud")
     private RequisitoSolicitud requisitoSolicitud;      
 }
+
+
+
+
+

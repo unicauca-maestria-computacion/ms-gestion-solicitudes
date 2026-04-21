@@ -7,9 +7,9 @@ import lombok.Data;
 
 @Data
 public class SolicitudRequestDto {
-    private Integer idTipoSolicitud;
-    private Integer idEstudiante;
-    private Integer idTutor;
+    private Long idTipoSolicitud;
+    private Long idEstudiante;
+    private Long idTutor;
     private DatosSolicitudHomologacionDto datosHomologacion;
     private List<InfoAdicionAsignaturaRequest> datosAdicionAsignatura;
     private CancelarAsignaturaRequest datosCancelarAsignatura;
@@ -25,7 +25,7 @@ public class SolicitudRequestDto {
     private List<AvalComiteRequest> datosAvalComite;
     private SolicitudBecaRequest datosSolicitudBeca;
     private Boolean requiereFirmaDirector;
-    private Integer idDirector;
+    private Long idDirector;
     private Boolean firmaEstudiante;
     private String oficioPdf;
     private Integer numPaginaTutor;
@@ -35,3 +35,8 @@ public class SolicitudRequestDto {
     private BigDecimal posXDirector;
     private BigDecimal posYDirector;
 }
+
+
+
+
+

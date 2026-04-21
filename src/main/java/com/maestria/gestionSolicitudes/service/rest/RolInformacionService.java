@@ -8,3 +8,8 @@ public interface RolInformacionService {
 
     Boolean guardarRolInformacion(RolInformacionResponse rolInfo);
 }
+
+
+
+
+

@@ -7,8 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.RequisitoSolicitud;
 
-public interface RequisitoSolicitudRepository extends JpaRepository<RequisitoSolicitud, Integer> {
+public interface RequisitoSolicitudRepository extends JpaRepository<RequisitoSolicitud, Long> {
 
     @Query("SELECT rs FROM RequisitoSolicitud rs WHERE rs.tipoSolicitud.codigo = ?1")
     Optional<RequisitoSolicitud> findByCodigo(String codigo);
 }
+
+
+
+
+

@@ -7,7 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.AdicionarAsignatura;
 import com.maestria.gestionSolicitudes.domain.AsignaturaAdicionada;
 
-public interface AsignaturaAdicionadaRepository extends JpaRepository<AsignaturaAdicionada, Integer> {
+public interface AsignaturaAdicionadaRepository extends JpaRepository<AsignaturaAdicionada, Long> {
     
     List<AsignaturaAdicionada> findByAdicionarAsignatura(AdicionarAsignatura adicionarAsignatura);
 }
+
+
+
+
+

@@ -10,3 +10,8 @@ public class DatosSolicitudAdicionCancelacionAsignatura {
     private String motivo;
     private String documentoAdjunto;
 }
+
+
+
+
+

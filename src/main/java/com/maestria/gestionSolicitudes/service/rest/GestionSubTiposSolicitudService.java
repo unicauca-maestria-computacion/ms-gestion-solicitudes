@@ -8,3 +8,8 @@ public interface GestionSubTiposSolicitudService {
     
     List<SubTiposSolicitudResponse> obtenerSubtiposPorTipoSolicitud(String proceso); 
 }
+
+
+
+
+

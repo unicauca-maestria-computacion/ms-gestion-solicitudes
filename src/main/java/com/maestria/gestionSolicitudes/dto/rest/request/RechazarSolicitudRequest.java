@@ -5,8 +5,13 @@ import lombok.Data;
 @Data
 public class RechazarSolicitudRequest {
     
-    private Integer idSolicitud;
+    private Long idSolicitud;
     private String emailRevisor;
     private String estado;
     private String comentario;
 }
+
+
+
+
+

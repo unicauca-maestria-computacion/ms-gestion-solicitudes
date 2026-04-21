@@ -22,7 +22,7 @@ public class DocumentosAdjuntosHomologacion {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_homologacion")
@@ -31,3 +31,8 @@ public class DocumentosAdjuntosHomologacion {
     @Column(name = "documento")
     private String documento;
 }
+
+
+
+
+

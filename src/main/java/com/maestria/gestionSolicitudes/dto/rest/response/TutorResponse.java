@@ -10,3 +10,8 @@ import lombok.EqualsAndHashCode;
 public class TutorResponse extends RespuestaBase {
     List<TutorDto> tutores;
 }
+
+
+
+
+

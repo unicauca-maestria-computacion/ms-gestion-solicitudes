@@ -11,7 +11,7 @@ public class ApoyoEconomicoCongresoRequest {
     private String tipoCongreso;
     private String fechaInicio;
     private String fechaFin;
-    private Integer idDirectorGrupo;
+    private Long idDirectorGrupo;
     private String nombreDirectorGrupo;
     private String tituloPublicacion;
     private BigDecimal valorApoyo;
@@ -23,3 +23,8 @@ public class ApoyoEconomicoCongresoRequest {
     private String lugarEvento;
     private List<String> documentosAdjuntos;
 }
+
+
+
+
+

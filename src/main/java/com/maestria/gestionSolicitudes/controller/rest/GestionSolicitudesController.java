@@ -106,7 +106,7 @@ public class GestionSolicitudesController {
     }
 
     @GetMapping("/obtener-datos-solicitud/{idSolicitud}")
-    public DatosGestionSolicitudResponse obtenerDatosSolicitud(@PathVariable Integer idSolicitud) throws Exception {
+    public DatosGestionSolicitudResponse obtenerDatosSolicitud(@PathVariable Long idSolicitud) throws Exception {
         return gestionSolicitudesService.obtenerDatosSolicitud(idSolicitud);
     }
 
@@ -131,7 +131,7 @@ public class GestionSolicitudesController {
     }
 
     @GetMapping("/obtener-solicitudes-en-comite/{idSolicitud}")
-    public SolicitudEnComiteResponse obtenerSolicitudesEnComite(@PathVariable Integer idSolicitud) throws Exception {
+    public SolicitudEnComiteResponse obtenerSolicitudesEnComite(@PathVariable Long idSolicitud) throws Exception {
         return gestionSolicitudesEnComiteService.obtenerSolicitudEnComite(idSolicitud);
     }
 
@@ -176,7 +176,7 @@ public class GestionSolicitudesController {
     }
 
     @GetMapping("/obtener-solicitudes-en-concejo/{idSolicitud}")
-    public SolicitudEnConcejoResponse obtenerSolicitudesEnConcejo(@PathVariable Integer idSolicitud) throws Exception {
+    public SolicitudEnConcejoResponse obtenerSolicitudesEnConcejo(@PathVariable Long idSolicitud) throws Exception {
         return gestionSolicitudesEnConcejoService.obtenerSolicitudEnConcejo(idSolicitud);
     }
 
@@ -186,17 +186,22 @@ public class GestionSolicitudesController {
     }
 
     @PostMapping("/save/solicitud/{idSolicitud}/{estado}")
-    public Boolean actualizarSolicitud(@PathVariable Integer idSolicitud, @PathVariable String estado) throws Exception {
+    public Boolean actualizarSolicitud(@PathVariable Long idSolicitud, @PathVariable String estado) throws Exception {
         return gestionSolicitudesService.actualizarSolicitud(idSolicitud, estado);
     }
 
     @GetMapping("/solicitud/requiere-director/{idSolicitud}/{correoElectronico}")
     public ResponseEntity<Boolean> verificarExistenciaSolicitud(
-            @PathVariable Integer idSolicitud, 
+            @PathVariable Long idSolicitud, 
             @PathVariable String correoElectronico) {
         
         boolean existe = gestionSolicitudesService.verificarExistenciaSolicitud(idSolicitud, correoElectronico);
         return ResponseEntity.ok(existe);
     }
 }
+
+
+
+
+
 

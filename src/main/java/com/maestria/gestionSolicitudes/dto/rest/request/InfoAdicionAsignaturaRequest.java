@@ -5,6 +5,11 @@ import lombok.Data;
 @Data
 public class InfoAdicionAsignaturaRequest {
     private String nombreAsignatura;
-    private Integer idDocente;
+    private Long idDocente;
     private String grupo;
 }
+
+
+
+
+

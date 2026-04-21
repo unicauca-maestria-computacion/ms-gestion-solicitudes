@@ -5,7 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.SolicitudBecaDescuento;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface SolicitudBecaDescuentoRepository extends JpaRepository<SolicitudBecaDescuento, Integer>{
+public interface SolicitudBecaDescuentoRepository extends JpaRepository<SolicitudBecaDescuento, Long>{
     
     SolicitudBecaDescuento findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

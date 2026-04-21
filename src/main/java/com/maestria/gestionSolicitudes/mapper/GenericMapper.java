@@ -17,3 +17,8 @@ public interface GenericMapper<D, E> {
         return entityPage.map(this::toDto);
     }
 }
+
+
+
+
+

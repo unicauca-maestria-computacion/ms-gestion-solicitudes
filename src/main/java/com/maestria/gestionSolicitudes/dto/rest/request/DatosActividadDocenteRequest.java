@@ -8,8 +8,13 @@ import lombok.Data;
 @Data
 public class DatosActividadDocenteRequest {
     private String codigoSubtipo;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private BigDecimal horasReconocer;
     private List<String> documentosAdjuntos;
     private List<String> enlacesAdjuntos;
 }
+
+
+
+
+

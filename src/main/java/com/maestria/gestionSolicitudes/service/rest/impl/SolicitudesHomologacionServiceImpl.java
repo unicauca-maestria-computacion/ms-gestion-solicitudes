@@ -29,7 +29,7 @@ public class SolicitudesHomologacionServiceImpl implements SolicitudesHomologaci
     
 
     @Override
-    public boolean registrarSolicitudHomologacion(Integer idSolicitud, DatosSolicitudHomologacionDto dHomologacionDto) {
+    public boolean registrarSolicitudHomologacion(Long idSolicitud, DatosSolicitudHomologacionDto dHomologacionDto) {
         try {
             Solicitudes solicitud = solicitudRepository.findById(idSolicitud).get();
             Homologaciones homologacion = new Homologaciones();
@@ -75,7 +75,7 @@ public class SolicitudesHomologacionServiceImpl implements SolicitudesHomologaci
                 asignaturasHomologadas = new AsignaturasHomologadas();
                 asignaturasHomologadas.setHomologacion(homologacion);
                 asignaturasHomologadas.setAsignaturaHomologar(null);
-                asignaturasHomologadas.setAsignaturaExterna(asignaturaExternaResponseDto.getIdAsignatura());
+                asignaturasHomologadas.setAsignaturaExterna(asignaturaExternaResponseDto.getIdAsignatura() != null ? asignaturaExternaResponseDto.getIdAsignatura().intValue() : null);
                 asignaturasHomologadas.setCalificacionObtenida(datosAsignaturaHomologacionDto.getCalificacion());
                 asignaturasHomologadas.setEstado(ESTADO_SOLICITUD.PENDIENTE.getDescripcion());
                 asignaturasHomologadasRepository.save(asignaturasHomologadas);
@@ -103,3 +103,8 @@ public class SolicitudesHomologacionServiceImpl implements SolicitudesHomologaci
     }
 
 }
+
+
+
+
+

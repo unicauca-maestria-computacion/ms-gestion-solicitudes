@@ -25,7 +25,7 @@ public class SolicitudBecaDescuento {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -40,3 +40,8 @@ public class SolicitudBecaDescuento {
     @Column(name = "formato_solicitud")
     private String formatoSolicitudBeca;
 }
+
+
+
+
+

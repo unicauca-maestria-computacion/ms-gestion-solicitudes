@@ -8,3 +8,8 @@ public class DocumentoRequerido {
     private Boolean adjuntarDocumento;
     private String nombreAcortado;
 }
+
+
+
+
+

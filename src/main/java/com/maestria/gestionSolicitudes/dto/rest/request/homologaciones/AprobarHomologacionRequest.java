@@ -4,12 +4,17 @@ import lombok.Data;
 
 @Data
 public class AprobarHomologacionRequest {
-    private Integer idHomologacion;    
+    private Long idHomologacion;    
     private String nombreAsignatura;
     private Integer creditos;
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
     private Double calificacion;
     private String nombrePrograma;
     private String nombreInstitucion;
     private Boolean aprobado;
 }
+
+
+
+
+

@@ -8,7 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TutorDto {
-    private Integer id;
+    private Long id;
     private String codigoTutor;
     private String nombreTutor;
 }
+
+
+
+
+

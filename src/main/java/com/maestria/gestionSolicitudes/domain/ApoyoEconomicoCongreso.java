@@ -22,7 +22,7 @@ public class ApoyoEconomicoCongreso {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -41,7 +41,7 @@ public class ApoyoEconomicoCongreso {
     private LocalDate fechaFin;
 
     @Column(name = "director_grupo_inv")
-    private Integer idDirector;
+    private Long idDirector;
 
     @Column(name = "titulo_publicacion")
     private String tituloPublicacion;
@@ -68,3 +68,8 @@ public class ApoyoEconomicoCongreso {
     private String grupoInvestigacion;
 
 }
+
+
+
+
+

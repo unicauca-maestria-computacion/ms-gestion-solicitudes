@@ -24,7 +24,7 @@ public class AvalComitePrograma {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -35,7 +35,7 @@ public class AvalComitePrograma {
     private SubTiposSolicitud subTiposSolicitud;
 
     @Column(name = "intensidad_horaria")
-    private Integer intensidadHoraria;
+    private Long intensidadHoraria;
 
     @Column(name = "horas_reconocer")
     private BigDecimal horasReconocer;
@@ -57,3 +57,8 @@ public class AvalComitePrograma {
     @Convert(converter = BooleanConverter.class)
     private Boolean aprobadoConcejo;
 }
+
+
+
+
+

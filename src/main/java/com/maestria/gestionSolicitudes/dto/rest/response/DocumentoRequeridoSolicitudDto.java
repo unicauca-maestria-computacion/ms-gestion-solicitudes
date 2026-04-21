@@ -15,3 +15,8 @@ public class DocumentoRequeridoSolicitudDto {
     private List<EnlacesTiposSolicitud> enlaces;
     private List<String> enlacesRequeridos;
 }
+
+
+
+
+

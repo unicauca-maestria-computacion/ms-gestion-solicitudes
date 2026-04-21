@@ -19,7 +19,7 @@ public class CancelarAsignatura {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -31,3 +31,8 @@ public class CancelarAsignatura {
     @Column(name = "documento_adjunto")
     private String documentoAdjunto;
 }
+
+
+
+
+

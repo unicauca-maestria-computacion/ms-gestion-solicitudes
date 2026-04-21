@@ -8,17 +8,17 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface SolicitudesRepository extends JpaRepository<Solicitudes, Integer> {
+public interface SolicitudesRepository extends JpaRepository<Solicitudes, Long> {
     
     @Query("""
         SELECT s FROM Solicitudes s 
         inner join FirmaSolicitud fs on fs.solicitud.id = s.id 
         WHERE s.estado = ?2
-        AND (s.idTutor = ?1 AND fs.firmaTutor = false) 
-        OR (s.idDirector = ?1 AND fs.firmaDirector = false)        
+        AND ((s.idTutor = ?1 AND (fs.firmaTutor = false OR fs.firmaTutor IS NULL)) 
+        OR (s.idDirector = ?1 AND (fs.firmaDirector = false OR fs.firmaDirector IS NULL)))        
         ORDER BY s.fechaModificacion ASC
         """)           
-    List<Solicitudes> findAllByIdTutorOrderByFechaModificacionAsc(Integer idTutor, String estado);
+    List<Solicitudes> findAllByIdTutorOrderByFechaModificacionAsc(Long idTutor, String estado);
 
     Optional<Solicitudes> findByRadicado(String radicado);
 
@@ -29,8 +29,13 @@ public interface SolicitudesRepository extends JpaRepository<Solicitudes, Intege
                    "INNER JOIN docentes d ON d.id = s.id_director " +
                    "INNER JOIN personas p ON p.id = d.id_persona " +
                    "WHERE s.id = ?1 AND p.correo_electronico = ?2", nativeQuery = true)
-    Integer obtenerDirectorSolicitud(Integer  solicitudId, String correoElectronico);
+    Integer obtenerDirectorSolicitud(Long  solicitudId, String correoElectronico);
 
 
     
 }
+
+
+
+
+

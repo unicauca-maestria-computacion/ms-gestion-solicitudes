@@ -31,3 +31,8 @@ public class DatosComunSolicitud {
     private String estadoSolicitud;
     private String oficioPdf;
 }
+
+
+
+
+

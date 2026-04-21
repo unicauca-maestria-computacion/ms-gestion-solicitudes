@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.CursarAsignatura;
 import com.maestria.gestionSolicitudes.domain.DocumentosCursarAsignatura;
 
-public interface DocumentosCursarAsignaturaRepository extends JpaRepository<DocumentosCursarAsignatura, Integer> {
+public interface DocumentosCursarAsignaturaRepository extends JpaRepository<DocumentosCursarAsignatura, Long> {
     List<DocumentosCursarAsignatura> findAllByCursarAsignatura(CursarAsignatura homologacion);
 }
+
+
+
+
+

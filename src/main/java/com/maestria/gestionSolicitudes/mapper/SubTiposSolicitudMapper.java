@@ -9,3 +9,8 @@ import com.maestria.gestionSolicitudes.dto.rest.response.SubTiposSolicitudRespon
 public interface SubTiposSolicitudMapper extends GenericMapper<SubTiposSolicitudResponse, SubTiposSolicitud> {
    
 }
+
+
+
+
+

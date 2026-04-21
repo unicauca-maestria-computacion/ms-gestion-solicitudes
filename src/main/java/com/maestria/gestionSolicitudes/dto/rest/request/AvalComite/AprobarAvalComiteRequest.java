@@ -6,9 +6,14 @@ import lombok.Data;
 
 @Data
 public class AprobarAvalComiteRequest {
-    private Integer idSubtipo;
+    private Long idSubtipo;
     private String nombreActividad;
     private BigDecimal horasReconocer;
     private Integer creditosReconocer;
     private Boolean aprobado;
 }
+
+
+
+
+

@@ -27,7 +27,7 @@ public class SolicitudesEnComite {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_solicitud")
@@ -46,3 +46,8 @@ public class SolicitudesEnComite {
     private Date fechaAval;
     
 }
+
+
+
+
+

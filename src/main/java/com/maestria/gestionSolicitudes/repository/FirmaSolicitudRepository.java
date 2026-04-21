@@ -5,6 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.FirmaSolicitud;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface FirmaSolicitudRepository extends JpaRepository<FirmaSolicitud, Integer> {
+public interface FirmaSolicitudRepository extends JpaRepository<FirmaSolicitud, Long> {
     FirmaSolicitud findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

@@ -25,3 +25,8 @@ public enum DESTINATARIO_CORREO {
         return null; // O lanza una excepción si prefieres
     }
 }
+
+
+
+
+

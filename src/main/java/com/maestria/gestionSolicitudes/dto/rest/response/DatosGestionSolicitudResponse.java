@@ -29,3 +29,8 @@ public class DatosGestionSolicitudResponse {
     private List<DatosAvalComiteResponse> datosAvalComite;
     private SolicitudBecaRequest datoSolicitudBeca;
 }
+
+
+
+
+

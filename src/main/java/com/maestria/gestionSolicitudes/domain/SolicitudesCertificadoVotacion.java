@@ -22,16 +22,16 @@ public class SolicitudesCertificadoVotacion {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "id_estudiante")
-    private Integer idEstudiante;
+    private Long idEstudiante;
 
     @Column(name = "estado")
     private String estado_solicitud;
     
     @Column(name = "id_tipo_solicitud")
-    private Integer idTipoSolicitud;
+    private Long idTipoSolicitud;
 
     @Column(name = "fecha_creacion")
     private String fechaCreacion;
@@ -45,3 +45,7 @@ public class SolicitudesCertificadoVotacion {
         fechaModificacion = LocalDateTime.now();
     }
 }
+
+
+
+

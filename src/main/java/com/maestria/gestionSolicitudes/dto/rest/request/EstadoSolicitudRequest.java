@@ -8,3 +8,8 @@ public class EstadoSolicitudRequest {
     private Integer codigo;
     private String estado;
 }
+
+
+
+
+

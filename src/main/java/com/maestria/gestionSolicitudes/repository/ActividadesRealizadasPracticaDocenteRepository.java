@@ -8,7 +8,12 @@ import com.maestria.gestionSolicitudes.domain.ActividadesRealizadasPracticaDocen
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
 public interface ActividadesRealizadasPracticaDocenteRepository 
-        extends JpaRepository<ActividadesRealizadasPracticaDocente, Integer>{
+        extends JpaRepository<ActividadesRealizadasPracticaDocente, Long>{
     
     List<ActividadesRealizadasPracticaDocente> findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

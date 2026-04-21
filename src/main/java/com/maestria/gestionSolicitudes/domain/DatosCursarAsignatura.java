@@ -23,14 +23,14 @@ public class DatosCursarAsignatura {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cursar_asignatura")
     private CursarAsignatura cursarAsignatura;
 
     @Column(name = "id_asignatura_externa")
-    private Integer idAsignaturaExterna;
+    private Long idAsignaturaExterna;
 
     @Column(name = "codigo_asignatura")
     private String codigoAsignatura;
@@ -58,3 +58,8 @@ public class DatosCursarAsignatura {
     @Convert(converter = BooleanConverter.class)
     private Boolean aprobadoConcejo;
 }
+
+
+
+
+

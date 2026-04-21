@@ -6,22 +6,27 @@ import org.springframework.data.jpa.repository.Query;
 import com.maestria.gestionSolicitudes.domain.Coordinador;
 
 
-public interface CoordinadorRepository extends JpaRepository<Coordinador, Integer> {
+public interface CoordinadorRepository extends JpaRepository<Coordinador, Long> {
     @Query(
-        value = "SELECT p.correo " +
-                "FROM persona p " +
-                "INNER JOIN coordinador c ON c.id_persona = p.id_persona " +
-                "WHERE c.estado = true",
+        value = "SELECT p.correo_electronico " +
+                "FROM personas p " +
+                "INNER JOIN coordinadores c ON c.id_persona = p.id " +
+                "LIMIT 1",
         nativeQuery = true
     )
     String obtenerCorreoCoordinador();
 
     @Query(
         value = "SELECT CONCAT(p.nombre, ' ', p.apellido) AS nombre_completo " +
-                "FROM persona p " +
-                "INNER JOIN coordinador c ON c.id_persona = p.id_persona " +
-                "WHERE c.estado = true",
+                "FROM personas p " +
+                "INNER JOIN coordinadores c ON c.id_persona = p.id " +
+                "LIMIT 1",
         nativeQuery = true
     )
     String obtenerNombreCompletoCoordinador();
 }
+
+
+
+
+

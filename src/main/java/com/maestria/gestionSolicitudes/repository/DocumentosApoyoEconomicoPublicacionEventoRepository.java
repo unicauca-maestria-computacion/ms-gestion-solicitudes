@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.ApoyoEconomicoPublicacionEvento;
 import com.maestria.gestionSolicitudes.domain.DocumentosApoyoEconomicoPublicacionEvento;
 
-public interface DocumentosApoyoEconomicoPublicacionEventoRepository extends JpaRepository<DocumentosApoyoEconomicoPublicacionEvento, Integer> {
+public interface DocumentosApoyoEconomicoPublicacionEventoRepository extends JpaRepository<DocumentosApoyoEconomicoPublicacionEvento, Long> {
     List<DocumentosApoyoEconomicoPublicacionEvento> findAllByApoyoEconomicoPublicacionEvento(ApoyoEconomicoPublicacionEvento apoyoEconomicoPublicacionEvento);
 }
+
+
+
+

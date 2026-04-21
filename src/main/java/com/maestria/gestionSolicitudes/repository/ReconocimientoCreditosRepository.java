@@ -5,6 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.ReconocimientoCreditos;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface ReconocimientoCreditosRepository extends JpaRepository<ReconocimientoCreditos, Integer> {
+public interface ReconocimientoCreditosRepository extends JpaRepository<ReconocimientoCreditos, Long> {
     ReconocimientoCreditos findBySolicitudAndTipoReconocimiento(Solicitudes solicitud, String tipoReconocimiento);
 }
+
+
+
+
+

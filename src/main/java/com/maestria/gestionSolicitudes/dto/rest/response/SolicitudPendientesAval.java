@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class SolicitudPendientesAval {
-    private Integer idSolicitud;
+    private Long idSolicitud;
     private String radicado;
     private String codigoSolicitud;
     private String nombreEstudiante;
@@ -13,3 +13,8 @@ public class SolicitudPendientesAval {
     private String fecha;
     private String identificacionSolicitante;
 }
+
+
+
+
+

@@ -4,7 +4,12 @@ import lombok.Data;
 
 @Data
 public class DocumentoCertificadoVotacionResponse {
-    private Integer id;
+    private Long id;
     private byte[] documentoPDF;
     
 }
+
+
+
+
+

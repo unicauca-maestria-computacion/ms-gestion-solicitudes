@@ -9,3 +9,8 @@ import com.maestria.gestionSolicitudes.dto.rest.request.ApoyoEconomicoCongresoRe
 public interface ApoyoEconomicoCongresoMapper extends GenericMapper<ApoyoEconomicoCongresoRequest, ApoyoEconomicoCongreso> {
 
 }
+
+
+
+
+

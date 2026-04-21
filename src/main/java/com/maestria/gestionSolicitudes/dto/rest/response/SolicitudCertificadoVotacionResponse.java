@@ -7,10 +7,15 @@ import java.time.LocalDateTime;
 
 @Data
 public class SolicitudCertificadoVotacionResponse {
-    private Integer id;
-    private Integer id_Estudiante;
+    private Long id;
+    private Long id_Estudiante;
     private String estado;
     private String fecha_creacion;
     private LocalDateTime fecha_modificacion;
-    private Integer id_tipo_solicitud;
+    private Long id_tipo_solicitud;
 }
+
+
+
+
+

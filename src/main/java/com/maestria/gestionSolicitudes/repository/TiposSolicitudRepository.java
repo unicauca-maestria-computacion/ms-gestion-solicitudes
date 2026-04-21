@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.TiposSolicitud;
 
-public interface TiposSolicitudRepository extends JpaRepository<TiposSolicitud, Integer> {
+public interface TiposSolicitudRepository extends JpaRepository<TiposSolicitud, Long> {
 
      
     @Query(value = """
@@ -22,3 +22,8 @@ public interface TiposSolicitudRepository extends JpaRepository<TiposSolicitud, 
 
     //consulta nativa filtrado con estado y fechas inicio y fin
 }
+
+
+
+
+

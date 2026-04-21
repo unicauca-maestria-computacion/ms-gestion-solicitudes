@@ -14,3 +14,8 @@ public class AvalPasantiaInvRequest {
     private String nombreDocenteExterno;
     private List<String> documentosAdjuntos;
 }
+
+
+
+
+

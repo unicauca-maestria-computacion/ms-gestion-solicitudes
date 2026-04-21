@@ -19,7 +19,7 @@ public class DocumentosActividadesRealizadas {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_actividad_realizada")
@@ -32,3 +32,8 @@ public class DocumentosActividadesRealizadas {
     @Column(name = "documento_base64")
     private String documento;
 }
+
+
+
+
+

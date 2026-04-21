@@ -19,7 +19,7 @@ public class DocumentosApoyoEconomico {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_apoyo_economico")
@@ -28,3 +28,8 @@ public class DocumentosApoyoEconomico {
     @Column(name = "documento")
     private String documento;
 }
+
+
+
+
+

@@ -27,7 +27,7 @@ public class DocumentoRequisitoSolicitud extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "nombre_documento")
     private String nombreDocumento;
@@ -47,3 +47,8 @@ public class DocumentoRequisitoSolicitud extends EntidadPrincipal {
     @Convert(converter = BooleanConverter.class)
     private Boolean enlace;
 }
+
+
+
+
+

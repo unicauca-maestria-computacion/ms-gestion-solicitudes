@@ -86,7 +86,7 @@ public class GestionSolicitudesEnComiteServiceImpl implements GestionSolicitudes
 
 
     @Override
-    public SolicitudEnComiteResponse obtenerSolicitudEnComite(Integer idSolicitud) {
+    public SolicitudEnComiteResponse obtenerSolicitudEnComite(Long idSolicitud) {
         SolicitudEnComiteResponse solicitudesEnComiteRes = new SolicitudEnComiteResponse();
         Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
         Optional<SolicitudesEnComite> optionalSolicitudesEnComite = solicitudesEnComiteRepository.findBySolicitud(solicitud);
@@ -187,7 +187,7 @@ public class GestionSolicitudesEnComiteServiceImpl implements GestionSolicitudes
                 AprobarHomologacionRequest homologaciones = new AprobarHomologacionRequest();
                 homologaciones.setIdHomologacion(asignaturaH.getId());
                 AsignaturaExternaResponseDto asignaturaExternaDto = gestionAsignaturasService
-                                        .obtenerAsignaturaExterna(asignaturaH.getAsignaturaExterna());
+                                        .obtenerAsignaturaExterna(asignaturaH.getAsignaturaExterna() != null ? asignaturaH.getAsignaturaExterna().longValue() : null);
                 homologaciones.setNombreAsignatura(asignaturaExternaDto.getNombre());
                 homologaciones.setCreditos(asignaturaExternaDto.getCreditos());
                 homologaciones.setIntensidadHoraria(asignaturaExternaDto.getIntensidadHoraria());
@@ -322,3 +322,8 @@ public class GestionSolicitudesEnComiteServiceImpl implements GestionSolicitudes
     }
     
 }
+
+
+
+
+

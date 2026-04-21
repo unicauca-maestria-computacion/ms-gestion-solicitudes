@@ -88,7 +88,7 @@ public class GestionSolicitudesEnConcejoServiceImpl implements GestionSolicitude
 
 
     @Override
-    public SolicitudEnConcejoResponse obtenerSolicitudEnConcejo(Integer idSolicitud) {
+    public SolicitudEnConcejoResponse obtenerSolicitudEnConcejo(Long idSolicitud) {
         SolicitudEnConcejoResponse solicitudesEnConcejoRes = new SolicitudEnConcejoResponse();
         Solicitudes solicitud = solicitudesRepository.findById(idSolicitud).get();
         Optional<SolicitudesEnConcejo> optionalSolicitudesEnConcejo = solicitudesEnConcejoRepository.findBySolicitud(solicitud);
@@ -213,7 +213,7 @@ public class GestionSolicitudesEnConcejoServiceImpl implements GestionSolicitude
                 AprobarHomologacionRequest homologaciones = new AprobarHomologacionRequest();
                 homologaciones.setIdHomologacion(asignaturaH.getId());
                 AsignaturaExternaResponseDto asignaturaExternaDto = gestionAsignaturasService
-                                        .obtenerAsignaturaExterna(asignaturaH.getAsignaturaExterna());
+                                        .obtenerAsignaturaExterna(asignaturaH.getAsignaturaExterna() != null ? asignaturaH.getAsignaturaExterna().longValue() : null);
                 homologaciones.setNombreAsignatura(asignaturaExternaDto.getNombre());
                 homologaciones.setCreditos(asignaturaExternaDto.getCreditos());
                 homologaciones.setIntensidadHoraria(asignaturaExternaDto.getIntensidadHoraria());
@@ -380,3 +380,8 @@ public class GestionSolicitudesEnConcejoServiceImpl implements GestionSolicitude
         }
     }
 }
+
+
+
+
+

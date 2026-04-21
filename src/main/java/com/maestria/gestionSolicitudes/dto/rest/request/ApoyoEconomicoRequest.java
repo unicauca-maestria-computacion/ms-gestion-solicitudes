@@ -10,7 +10,7 @@ public class ApoyoEconomicoRequest {
     private String lugarPasantia;
     private String fechaInicio;
     private String fechaFin;
-    private Integer idDirectorGrupo;
+    private Long idDirectorGrupo;
     private String nombreDirectorGrupo;
     private String grupoInvestigacion;
     private BigDecimal valorApoyo;
@@ -25,3 +25,8 @@ public class ApoyoEconomicoRequest {
     private String lugarEvento;
     private List<String> documentosAdjuntos;
 }
+
+
+
+
+

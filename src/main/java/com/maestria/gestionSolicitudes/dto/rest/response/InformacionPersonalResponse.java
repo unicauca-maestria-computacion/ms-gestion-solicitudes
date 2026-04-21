@@ -10,3 +10,8 @@ import lombok.EqualsAndHashCode;
 public class InformacionPersonalResponse extends RespuestaBase {
     private InformacionPersonalDto informacionPersonalDto;
 }
+
+
+
+
+

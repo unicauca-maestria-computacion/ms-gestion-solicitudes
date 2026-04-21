@@ -5,6 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.AplazarSemestre;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 
-public interface AplazarSemestreRepository extends JpaRepository<AplazarSemestre, Integer> {
+public interface AplazarSemestreRepository extends JpaRepository<AplazarSemestre, Long> {
     AplazarSemestre findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

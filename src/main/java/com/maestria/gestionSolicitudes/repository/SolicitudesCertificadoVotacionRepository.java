@@ -9,7 +9,7 @@ import com.maestria.gestionSolicitudes.domain.SolicitudesCertificadoVotacion;
 import com.maestria.gestionSolicitudes.dto.rest.response.SolicitudCertificadoVotacionResponse;
 
 @Repository
-public interface SolicitudesCertificadoVotacionRepository extends JpaRepository<SolicitudesCertificadoVotacion, Integer> {
+public interface SolicitudesCertificadoVotacionRepository extends JpaRepository<SolicitudesCertificadoVotacion, Long> {
     @Query(value = """
         SELECT s.id, s.id_tipo_solicitud, s.id_estudiante, s.documento_firmado,
                s.fecha_creacion, s.fecha_modificacion, s.estado 
@@ -20,3 +20,7 @@ public interface SolicitudesCertificadoVotacionRepository extends JpaRepository<
 
 
 }
+
+
+
+

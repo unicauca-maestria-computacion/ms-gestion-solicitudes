@@ -47,3 +47,8 @@ public class EntidadPrincipal implements Serializable {
         fechaModificacion = LocalDateTime.now();
     }
 }
+
+
+
+
+

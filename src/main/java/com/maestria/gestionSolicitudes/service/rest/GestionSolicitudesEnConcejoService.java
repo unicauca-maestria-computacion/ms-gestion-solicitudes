@@ -4,8 +4,13 @@ import com.maestria.gestionSolicitudes.dto.rest.response.SolicitudEnConcejoRespo
 
 public interface GestionSolicitudesEnConcejoService {
 
-    SolicitudEnConcejoResponse obtenerSolicitudEnConcejo(Integer idSolicitud);
+    SolicitudEnConcejoResponse obtenerSolicitudEnConcejo(Long idSolicitud);
 
     Boolean guardarSolicitudEnConcejo(SolicitudEnConcejoResponse datosSolicitudEnConcejo);
     
 }
+
+
+
+
+

@@ -9,3 +9,8 @@ public class RolInformacionResponse {
     private String titulo;
     private String tratamiento;
 }
+
+
+
+
+

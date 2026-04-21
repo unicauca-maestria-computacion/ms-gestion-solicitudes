@@ -4,8 +4,13 @@ import com.maestria.gestionSolicitudes.dto.rest.response.SolicitudEnComiteRespon
 
 public interface GestionSolicitudesEnComiteService {
 
-    SolicitudEnComiteResponse obtenerSolicitudEnComite(Integer idSolicitud);
+    SolicitudEnComiteResponse obtenerSolicitudEnComite(Long idSolicitud);
 
     Boolean guardarSolicitudEnComite(SolicitudEnComiteResponse datosSolicitudEnComite);
     
 }
+
+
+
+
+

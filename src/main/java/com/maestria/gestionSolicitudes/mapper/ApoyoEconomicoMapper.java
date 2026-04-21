@@ -9,3 +9,8 @@ import com.maestria.gestionSolicitudes.dto.rest.request.ApoyoEconomicoRequest;
 public interface ApoyoEconomicoMapper extends GenericMapper<ApoyoEconomicoRequest, ApoyoEconomicoInvestigacion> {
 
 }
+
+
+
+
+

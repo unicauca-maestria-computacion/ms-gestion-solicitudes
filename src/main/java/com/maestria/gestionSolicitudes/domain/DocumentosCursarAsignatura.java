@@ -20,7 +20,7 @@ public class DocumentosCursarAsignatura {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cursar_asignatura")
@@ -29,3 +29,8 @@ public class DocumentosCursarAsignatura {
     @Column(name = "documento")
     private String documento;    
 }
+
+
+
+
+

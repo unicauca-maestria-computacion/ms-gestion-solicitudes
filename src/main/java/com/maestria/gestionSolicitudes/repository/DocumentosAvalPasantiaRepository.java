@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.AvalPasantiaInvestigacion;
 import com.maestria.gestionSolicitudes.domain.DocumentosAvalPasantia;
 
-public interface DocumentosAvalPasantiaRepository extends JpaRepository<DocumentosAvalPasantia, Integer> {
+public interface DocumentosAvalPasantiaRepository extends JpaRepository<DocumentosAvalPasantia, Long> {
     List<DocumentosAvalPasantia> findAllByAvalPasantia(AvalPasantiaInvestigacion avalPasantia);
 }
+
+
+
+
+

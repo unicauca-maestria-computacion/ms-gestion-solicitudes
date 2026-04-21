@@ -7,7 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.maestria.gestionSolicitudes.domain.Solicitudes;
 import com.maestria.gestionSolicitudes.domain.SolicitudesEnConcejo;
 
-public interface SolicitudesEnConcejoRepository extends JpaRepository<SolicitudesEnConcejo, Integer> {
+public interface SolicitudesEnConcejoRepository extends JpaRepository<SolicitudesEnConcejo, Long> {
     
     Optional<SolicitudesEnConcejo> findBySolicitud(Solicitudes solicitud);
 }
+
+
+
+
+

@@ -12,3 +12,8 @@ public interface MensajeriaService {
     Boolean enviarEmail(EmailRequest emailRequest);
 
 }
+
+
+
+
+

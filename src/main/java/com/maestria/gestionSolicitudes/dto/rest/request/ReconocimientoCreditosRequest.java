@@ -9,3 +9,8 @@ public class ReconocimientoCreditosRequest {
     private List<String> documentosAdjuntos;
     private List<String> enlacesAdjuntos;
 }
+
+
+
+
+

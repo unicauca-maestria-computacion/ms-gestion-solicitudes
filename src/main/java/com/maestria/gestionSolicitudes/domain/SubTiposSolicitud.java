@@ -29,7 +29,7 @@ public class SubTiposSolicitud extends EntidadPrincipal {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_tipo_solicitud")
@@ -54,3 +54,8 @@ public class SubTiposSolicitud extends EntidadPrincipal {
     @Convert(converter = BooleanConverter.class)
     private Boolean requiereAval;
 }
+
+
+
+
+

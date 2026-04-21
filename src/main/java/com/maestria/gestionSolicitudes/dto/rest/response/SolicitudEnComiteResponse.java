@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 public class SolicitudEnComiteResponse {
-    private Integer idSolicitud;
+    private Long idSolicitud;
     private Boolean enComite;
     private String avaladoComite;
     private String conceptoComite;
@@ -23,3 +23,8 @@ public class SolicitudEnComiteResponse {
     private List<AprobarAvalComiteRequest> avalActPracticaDocente;
     private List<AprobarAvalComiteRequest> reconocimientoCreditosPD;
 }
+
+
+
+
+

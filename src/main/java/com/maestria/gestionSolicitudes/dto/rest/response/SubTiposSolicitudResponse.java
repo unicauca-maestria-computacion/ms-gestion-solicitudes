@@ -8,8 +8,8 @@ import lombok.Data;
 @Data
 public class SubTiposSolicitudResponse {
 
-    private Integer id;
-    private Integer idTipoSolicitud;
+    private Long id;
+    private Long idTipoSolicitud;
     private String codigo;
     private String nombre;
     private String abreviatura;
@@ -18,3 +18,8 @@ public class SubTiposSolicitudResponse {
     private List<String> documentos;
     private List<String> enlaces;
 }
+
+
+
+
+

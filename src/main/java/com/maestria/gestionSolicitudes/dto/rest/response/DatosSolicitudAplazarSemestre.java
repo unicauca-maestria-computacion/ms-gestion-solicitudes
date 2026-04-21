@@ -8,3 +8,8 @@ public class DatosSolicitudAplazarSemestre {
     private String motivo;
     private String documentoAdjunto;
 }
+
+
+
+
+

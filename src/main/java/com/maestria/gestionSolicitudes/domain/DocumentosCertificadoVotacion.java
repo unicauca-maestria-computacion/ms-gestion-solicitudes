@@ -17,7 +17,7 @@ public class DocumentosCertificadoVotacion {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     
     @Lob
     @Column(name = "documento_firmado")
@@ -25,3 +25,8 @@ public class DocumentosCertificadoVotacion {
      
     
 }
+
+
+
+
+

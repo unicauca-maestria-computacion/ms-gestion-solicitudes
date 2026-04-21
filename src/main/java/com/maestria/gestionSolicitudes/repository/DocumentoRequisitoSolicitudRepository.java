@@ -7,10 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.maestria.gestionSolicitudes.domain.DocumentoRequisitoSolicitud;
 
-public interface DocumentoRequisitoSolicitudRepository extends JpaRepository<DocumentoRequisitoSolicitud, Integer> {
+public interface DocumentoRequisitoSolicitudRepository extends JpaRepository<DocumentoRequisitoSolicitud, Long> {
     
     @Query("SELECT drs FROM DocumentoRequisitoSolicitud drs " +
         "WHERE drs.requisitoSolicitud.id = ?1 " +
         "ORDER BY drs.nombreDocumento ASC")
-    List<DocumentoRequisitoSolicitud> findByRequisitoSolicitudId(Integer id);
+    List<DocumentoRequisitoSolicitud> findByRequisitoSolicitudId(Long id);
 }
+
+
+
+
+

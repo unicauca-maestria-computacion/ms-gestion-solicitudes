@@ -13,3 +13,8 @@ public class TipoSolicitudResponse extends RespuestaBase {
     
     private List<TipoSolicitudDto> tipoSolicitudDto;
 }
+
+
+
+
+

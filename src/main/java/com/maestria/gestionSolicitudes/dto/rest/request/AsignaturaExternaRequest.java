@@ -8,7 +8,7 @@ public class AsignaturaExternaRequest {
     private String institutoProcedencia;
     private String nombreAsignatura;
     private Integer numeroCreditos;
-    private Integer intensidadHoraria;    
+    private Long intensidadHoraria;    
     private String contenidoProgramatico;
     private String codigoAsignatura;
     private String grupo;
@@ -16,3 +16,8 @@ public class AsignaturaExternaRequest {
     private String tituloDocente;
     private String cartaAceptacion;
 }
+
+
+
+
+
