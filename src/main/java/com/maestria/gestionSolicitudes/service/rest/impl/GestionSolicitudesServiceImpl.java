@@ -2,6 +2,7 @@ package com.maestria.gestionSolicitudes.service.rest.impl;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1662,18 +1663,28 @@ public class GestionSolicitudesServiceImpl implements GestionSolicitudesService 
     }
 
     public FechaActualResponse obtenerFechaActual() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Map> response = restTemplate.getForEntity(TIME_API_URL, Map.class);
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<Map> response = restTemplate.getForEntity(TIME_API_URL, Map.class);
 
-        if (response.getBody() != null) {
-            String year = String.valueOf(response.getBody().get("year"));
-            String month = String.valueOf(response.getBody().get("month"));
-            String day = String.valueOf(response.getBody().get("day"));
+            if (response.getBody() != null) {
+                String year = String.valueOf(response.getBody().get("year"));
+                String month = String.valueOf(response.getBody().get("month"));
+                String day = String.valueOf(response.getBody().get("day"));
 
-            return new FechaActualResponse(year, month, day);
-        }        
-        throw new RuntimeException("No se pudo obtener la fecha del servidor de tiempo.");
+                return new FechaActualResponse(year, month, day);
+            }
+        } catch (Exception e) {
+            logger.warn("No se pudo obtener la fecha de la API externa ({}). Usando hora local del servidor.", e.getMessage());
+        }
 
+        // Fallback a la fecha local en caso de error o respuesta nula
+        LocalDate localDate = LocalDate.now(ZoneId.of("America/Bogota"));
+        return new FechaActualResponse(
+            String.valueOf(localDate.getYear()),
+            String.valueOf(localDate.getMonthValue()),
+            String.valueOf(localDate.getDayOfMonth())
+        );
     }
 }
 
