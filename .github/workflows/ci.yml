@@ -161,7 +161,8 @@ jobs:
 
       - name: Final Status Check
         run: |
-          sleep 5
+          sleep 15
           docker ps | grep ms-gestion-solicitudes-service || true
-          echo "--- LAST 20 LINES OF LOGS ---"
-          docker logs --tail 20 ms-gestion-solicitudes-service || true
+          echo "--- LAST 100 LINES OF LOGS ---"
+          docker logs --tail 100 ms-gestion-solicitudes-service || true
+
