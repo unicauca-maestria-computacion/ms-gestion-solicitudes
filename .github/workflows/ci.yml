@@ -163,6 +163,7 @@ jobs:
             -e SPRING_DATASOURCE_PASSWORD="$BD_PASSWORD" \
             -e SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE="10MB" \
             -e SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE="10MB" \
+            -e GESTION_ESTUDIANTES_DOCENTES_URL="http://ms-gestion-docentes-estudiantes-service:8091/api/" \
             -e JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xms64m -Xmx192m" \
             $DOCKER_USERNAME/practica-profesional-gestion-solicitudes:latest
 
