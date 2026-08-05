@@ -161,6 +161,8 @@ jobs:
             -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql-db:3306/maestria-computacion?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Bogota" \
             -e SPRING_DATASOURCE_USERNAME="$BD_USER" \
             -e SPRING_DATASOURCE_PASSWORD="$BD_PASSWORD" \
+            -e SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE="10MB" \
+            -e SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE="10MB" \
             -e JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xms64m -Xmx192m" \
             $DOCKER_USERNAME/practica-profesional-gestion-solicitudes:latest
 
