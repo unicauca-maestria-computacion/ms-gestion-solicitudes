@@ -44,7 +44,19 @@ public class SolicitudesEnConcejo {
 
     @Column(name = "fecha_aval")
     private Date fechaAval;
-    
+
+    @Column(name = "porcentaje")
+    private Float porcentaje;
+
+    @Column(name = "resolucion")
+    private String resolucion;
+
+    @Column(name = "fecha_inicio")
+    private Date fechaInicio;
+
+    @Column(name = "fecha_fin")
+    private Date fechaFin;
+
 }
 
 

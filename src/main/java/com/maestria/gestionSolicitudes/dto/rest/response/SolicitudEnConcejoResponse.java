@@ -17,6 +17,10 @@ public class SolicitudEnConcejoResponse {
     private String conceptoConcejo;
     private String numeroActa;
     private String fechaAval;
+    private Float porcentaje;
+    private String resolucion;
+    private String fechaInicio;
+    private String fechaFin;
     private List<String> documentosConcejo;
     private List<AprobarAsignaturaRequest> asignaturasAprobadas;
     private List<AprobarHomologacionRequest> asignaturasHomologadas;

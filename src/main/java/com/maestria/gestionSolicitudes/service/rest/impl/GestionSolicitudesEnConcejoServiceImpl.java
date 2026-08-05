@@ -99,9 +99,19 @@ public class GestionSolicitudesEnConcejoServiceImpl implements GestionSolicitude
             solicitudesEnConcejoRes.setAvaladoConcejo(solicitudConcejo.getAvaladoConcejo());
             solicitudesEnConcejoRes.setConceptoConcejo(solicitudConcejo.getConceptoConcejo());
             solicitudesEnConcejoRes.setNumeroActa(solicitudConcejo.getNumeroActa());
+            solicitudesEnConcejoRes.setPorcentaje(solicitudConcejo.getPorcentaje());
+            solicitudesEnConcejoRes.setResolucion(solicitudConcejo.getResolucion());
             if (solicitudConcejo.getFechaAval() != null){
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");        
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 solicitudesEnConcejoRes.setFechaAval(formatter.format(solicitudConcejo.getFechaAval()));
+            }
+            if (solicitudConcejo.getFechaInicio() != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                solicitudesEnConcejoRes.setFechaInicio(formatter.format(solicitudConcejo.getFechaInicio()));
+            }
+            if (solicitudConcejo.getFechaFin() != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                solicitudesEnConcejoRes.setFechaFin(formatter.format(solicitudConcejo.getFechaFin()));
             }
             List<DocumentosConcejo> documentosConcejo = documentosConcejoRepository.findBySolicitudConcejo(solicitudConcejo);
             List<String> documentos = new ArrayList<>();
@@ -134,6 +144,16 @@ public class GestionSolicitudesEnConcejoServiceImpl implements GestionSolicitude
             if (datosSolicitudEnConcejo.getFechaAval() != null){
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 solicitudConcejo.setFechaAval(formatter.parse(datosSolicitudEnConcejo.getFechaAval()));
+            }
+            solicitudConcejo.setPorcentaje(datosSolicitudEnConcejo.getPorcentaje());
+            solicitudConcejo.setResolucion(datosSolicitudEnConcejo.getResolucion());
+            if (datosSolicitudEnConcejo.getFechaInicio() != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                solicitudConcejo.setFechaInicio(formatter.parse(datosSolicitudEnConcejo.getFechaInicio()));
+            }
+            if (datosSolicitudEnConcejo.getFechaFin() != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                solicitudConcejo.setFechaFin(formatter.parse(datosSolicitudEnConcejo.getFechaFin()));
             }
             solicitudesEnConcejoRepository.save(solicitudConcejo);             
             if(datosSolicitudEnConcejo.getDocumentosConcejo() != null) {
