@@ -151,8 +151,9 @@ jobs:
             --network-alias "ms-gestion-solicitudes-service" \
             --network-alias "ms-gestion-solicitudes" \
             --restart "always" \
-            --memory "384m" \
-            --memory-swap "768m" \
+            --cpus "0.3" \
+            --memory "256m" \
+            --memory-swap "384m" \
             --label project="practica-u" \
             --label service="ms-gestion-solicitudes" \
             -e SPRING_PROFILES_ACTIVE="dev" \
@@ -164,7 +165,7 @@ jobs:
             -e SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE="10MB" \
             -e SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE="10MB" \
             -e GESTION_ESTUDIANTES_DOCENTES_URL="http://ms-gestion-docentes-estudiantes-service:8091/api/" \
-            -e JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xms64m -Xmx192m" \
+            -e JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xms32m -Xmx160m" \
             $DOCKER_USERNAME/practica-profesional-gestion-solicitudes:latest
 
       - name: Clean Old Images of This Service
